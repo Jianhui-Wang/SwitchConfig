@@ -1,0 +1,159 @@
+﻿<Window x:Uid="this" x:Class="SwitchConfig.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SwitchConfig"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="478" Width="838.79"
+        Loaded="MainWindow_Loaded">
+    
+    <Window.Resources>
+        <ResourceDictionary x:Uid="ResourceDictionary_1" Source="/Keysight.Tap.Gui.Controls;component/DefaultStyle.xaml"/>
+    </Window.Resources>
+
+    <Grid x:Uid="Grid_1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Background="#FFE5E5E5" Grid.Column="0" HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="6*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="DUT Port" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                <TextBox Name="dutPort" Grid.Row="0" Grid.Column="1" Text="" TextChanged="dutPortChanged"></TextBox>
+                <Button Name="addDutPort" Grid.Row="0" Grid.Column="2" Content="+" Click="addDutPort_Click" IsEnabled="{Binding Path=allow_addDutPort}"/>
+                <Button Name="removeDutPort" Grid.Row="0" Grid.Column="3" Content="-" Click="removeDutPort_Click" IsEnabled="{Binding Path=allow_removeDutPort}"/>
+                <ListView x:Name="dutPortsList" Grid.Row="1" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="4" SelectionMode="Single" HorizontalContentAlignment="Stretch" SelectionChanged="dutPortsList_SelectionChanged">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=id}" Width="100" />
+                            <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Path=desc}" Width="200" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="Inst Port" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                <TextBox Name="instPort" Grid.Row="6" Grid.Column="1" Text="" TextChanged="instPortChanged"></TextBox>
+                <Button Name="addInstPort" Grid.Row="6" Grid.Column="2" Content="+" Click="addInstPort_Click" IsEnabled="{Binding Path=allow_addInstPort}"/>
+                <Button Name="removeInstPort" Grid.Row="6" Grid.Column="3" Content="-" Click="removeInstPort_Click" IsEnabled="{Binding Path=allow_removeInstPort}"/>
+                <ListView x:Name="instPortsList" Grid.Row="7" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="4" SelectionMode="Single" HorizontalContentAlignment="Stretch" SelectionChanged="instPortsList_SelectionChanged">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=id}" Width="100"/>
+                            <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Path=desc}" Width="200" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+            </Grid>
+
+            <GridSplitter x:Name="gridSplitter" Grid.Column="1" Grid.ColumnSpan="1" Width="3" HorizontalAlignment="Stretch"/>
+
+            <Grid Grid.Column="2" HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Background="#FFE5E5E5" Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="6*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Connections List" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                    <Button Name="addConn" Grid.Column="2" Content="+" Click="addConnection_Click" IsEnabled="{Binding Path=allow_addConn}"></Button>
+                    <Button Name="removeConn" Grid.Column="3" Content="-" Click="removeConnection_Click" IsEnabled="{Binding Path=allow_removeConn}"></Button>
+                    <ListView x:Name="connsList" Grid.Row="1" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="4" SelectionMode="Multiple" HorizontalContentAlignment="Stretch" SelectionChanged="connsList_SelectionChanged">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=id}" Width="60"/>
+                                <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Path=desc}" Width="200" />
+                                <GridViewColumn Header="Dut" DisplayMemberBinding="{Binding Path=dut_port.id}" Width="50"/>
+                                <GridViewColumn Header="Inst" DisplayMemberBinding="{Binding Path=inst_port.id}" Width="50"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+                    <TextBlock Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Text="Paths List" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                    <Button Name="addPath" Grid.Row="6" Grid.Column="2" Content="+" Click="addPath_Click" IsEnabled="{Binding Path=allow_addPath}"></Button>
+                    <Button Name="removePath" Grid.Row="6" Grid.Column="3" Content="-" Click="removePath_Click" IsEnabled="{Binding Path=allow_removePath}"></Button>
+                    <ListView x:Name="pathList" Grid.Row="7" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="4" SelectionMode="Single" HorizontalContentAlignment="Stretch">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=id}" Width="60"/>
+                                <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Path=desc}" Width="200" />
+                                <GridViewColumn Header="Conn1" DisplayMemberBinding="{Binding Path=conns[0].id}" Width="50"/>
+                                <GridViewColumn Header="Conn2" DisplayMemberBinding="{Binding Path=conns[1].id}" Width="50"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <GridSplitter x:Name="splitter2" Grid.Row="1" Height="3" HorizontalAlignment="Stretch"/>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Grid.ColumnSpan="2" Content="Show Graph" Click="ShowGraph_Click"></Button>
+            <Button Grid.Column="4" Grid.ColumnSpan="2" Content="Load From File" Click="LoadFromFile_Click"></Button>
+            <Button Grid.Column="7" Grid.ColumnSpan="2" Content="Save To File" Click="SaveToFile_Click"></Button>
+        </Grid>
+    </Grid>
+
+</Window>
