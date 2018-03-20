@@ -35,12 +35,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Keysight.S8901A.Common.BasePlugins, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\PA_Solution\RnD Ref Solution\Main\Common\Drivers\Keysight.S8901A.Common.BasePlugins.dll</HintPath>
+    <Reference Include="Keysight.S8901A.Common.BasePlugins">
+      <HintPath>.\Keysight.S8901A.Common.BasePlugins.dll</HintPath>
     </Reference>
     <Reference Include="Keysight.Tap.Gui.Controls">
-      <HintPath>..\..\..\..\..\Program Files\Keysight\TAP\Keysight.Tap.Gui.Controls.dll</HintPath>
+      <HintPath>.\Keysight.Tap.Gui.Controls.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
